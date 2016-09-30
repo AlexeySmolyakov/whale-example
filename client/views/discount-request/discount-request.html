@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<script type="text/javascript">
+		var context = { // этот объект генерится из Java
+			receipts: {
+				getById: function () {
+					return {
+						products: {
+							'ytrxv-dfdg4-kjh': 1,
+							'poiml-79kjh-rys': 1,
+							'hyt9c-gfsfd-iuo': 1,
+							'cvxxv-jgwf6-7fh': 2,
+						},
+						add: function (id) {
+							this.products[id] = this.products[id] || 0;
+							this.products[id]++;
+						},
+						remove: function (id) {
+							this.products[id]--;
+							if (this.products[id] <= 0) {
+								delete this.products[id];
+							}
+						}
+					}
+				}
+			},
+			data: { // данные которые были переданы при вызове метода navigation.push
+				receipt: {
+					products: {
+						'ytrxv-dfdg4-kjh': 1,
+						'poiml-79kjh-rys': 1,
+						'hyt9c-gfsfd-iuo': 1,
+						'cvxxv-jgwf6-7fh': 2,
+					},
+					add: function (id) {
+						this.products[id] = this.products[id] || 0;
+						this.products[id]++;
+					},
+					remove: function (id) {
+						this.products[id]--;
+						if (this.products[id] <= 0) {
+							delete this.products[id];
+						}
+					}
+				},
+				suggestions: [
+					{
+						id: 'chesnochek',
+						name: 'Стол декоративный, молочный. Поверхность Стол декоративный, молочный. Поверхность ',
+						price: 1000.00
+					},
+					{ id: 'hlebywek', name: 'Хлебушек', price: 21111.00 },
+					{ id: 'ogur4iki', name: 'Соленые огурчики', price: 3000.50 },
+					{ id: 'saltce', name: 'Сало', price: 400.20 }
+				]
+			},
+			navigation: { // класс для работы с навигацией
+				pushNext: function () {
+				}
+			}
+		}
+	</script>
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600&subset=latin,cyrillic" rel="stylesheet"
+				type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,600&subset=latin,cyrillic" rel="stylesheet"
+				type="text/css">
+
+	<!-- Это вставляется, исходя из манифетса -->
+	<link rel="stylesheet" type="text/css" href="discount-request.css">
+</head>
+<body>
+<!-- Этот div предоставляют партнеры-->
+<div id="root"></div>
+
+<!-- Это вставляется исходя из манифетса -->
+<script type="text/javascript" src="discount-request.js"></script>
+</body>
+</html>

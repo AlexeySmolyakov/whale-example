@@ -1,6 +1,6 @@
 version: 1
 
-packageName: mintWhale
+packageName: ALOL
 
 capabilities:
   - inventory
@@ -26,9 +26,9 @@ plugins:
     behavior: before-receipt-fixed.js
 
 views:
-  - name: suggestion-list
-    source: view.html
-    scripts: # список скриптов которые должны быть подключены
-      - suggestion-list-view.js
-    styles: # список стилей которые должны быть подключены
+  - name: discount-request
+    source: discount-request.html
+    scripts: # script list to be included
+      - discount-request.js
+    styles: # style list to be included
       - "*.css" # может подключить все файлы

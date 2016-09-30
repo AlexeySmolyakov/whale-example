@@ -19,6 +19,7 @@
   "dependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "path": "^0.12.7"
   }
 }
