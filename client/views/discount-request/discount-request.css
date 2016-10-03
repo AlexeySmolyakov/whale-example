@@ -1,10 +1,10 @@
 html, body {
   padding: 0;
   margin: 0;
-  background: #3C3C46; }
+  background: white; }
 
 * {
-  font-family: "Roboto", sans-serif-medium, sans-serif;
+  font-family: "Open Sans", sans-serif-medium, sans-serif;
   font-weight: normal;
   cursor: default;
   -webkit-touch-callout: none;
@@ -12,4 +12,62 @@ html, body {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  padding: 20px;
+  padding-bottom: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.header {
+  margin-bottom: 100px; }
+  .header__text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px; }
+  .header__hint {
+    color: #e3e3e3;
+    font-size: 16px; }
+
+.input {
+  overflow: hidden;
+  margin: 0 -10px;
+  display: flex; }
+  .input__item {
+    flex: 1;
+    padding: 0 10px; }
+    .input__item input {
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      border: none;
+      border-bottom: solid 1px #e1e1e1;
+      outline: none;
+      width: 100%; }
+
+.button {
+  margin: 200px 0; }
+  .button button {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #0b4866;
+    color: white;
+    border-radius: 2px;
+    padding: 14px 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
+    .button button:active {
+      background-color: #0c4e6f; }
