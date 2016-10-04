@@ -1,4 +1,4 @@
-// ALOL
+
 
 var isCardNumberValid = function (cardNumber) {
 	cardNumber = cardNumber.trim();
@@ -60,15 +60,16 @@ var handleApplyDiscountButtonEvents = function () {
 			}]
 		};
 
-		if (response.status == 0) {
+		if (response.status == 0 && response.items.length) {
+
 			// get discount percent
 			var discountPercent = response.items[0].percent;
 
-			// Apply discount
-			// context.data.receipt.applyDiscount(discountPercent);
+			// apply discount
+			context.data.receipt.applyDiscount(discountPercent);
 
-			// Go to next page
-			// context.navigation.pushNext();
+			// go to EvoPos
+			if (navigation) navigation.pushNext();
 		}
 	})
 };
