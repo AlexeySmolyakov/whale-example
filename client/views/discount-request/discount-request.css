@@ -32,8 +32,8 @@ body {
     color: #333;
     margin-bottom: 4px; }
   .header__hint {
-    color: #e3e3e3;
-    font-size: 16px; }
+    color: #dddddd;
+    font-size: 14px; }
 
 .input {
   overflow: hidden;
@@ -50,6 +50,20 @@ body {
       border-bottom: solid 1px #e1e1e1;
       outline: none;
       width: 100%; }
+
+.error {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  color: red;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  -moz-transition: opacity 0.1s ease-in-out;
+  -ms-transition: opacity 0.1s ease-in-out;
+  -o-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out; }
+  .error.has-error {
+    opacity: 1; }
 
 .button {
   margin: 200px 0; }

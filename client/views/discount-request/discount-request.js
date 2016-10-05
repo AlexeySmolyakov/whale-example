@@ -1,5 +1,3 @@
-
-
 var isCardNumberValid = function (cardNumber) {
 	cardNumber = cardNumber.trim();
 	return (cardNumber.length == 16 && /\d+/g.test(cardNumber));
@@ -36,6 +34,14 @@ var handleInputEvents = function () {
 	});
 };
 
+var showError = function () {
+	document.querySelector('.error').classList.add('has-error');
+
+	setTimeout(function () {
+		document.querySelector('.error').classList.remove('has-error')
+	}, 1000)
+}
+
 
 var handleApplyDiscountButtonEvents = function () {
 	// get button element
@@ -51,25 +57,34 @@ var handleApplyDiscountButtonEvents = function () {
 		if (!isCardNumberValid(cardNumber)) return false;
 
 		// Request discount by card number
-		console.warn('Make HTTP request');
+		var path = 'customer-discountcard?_method=discountcardPercent&cardnumber=' + cardNumber;
+		var response = {};
 
-		var response = {
-			status: 0,
-			items: [{
-				percent: 10
-			}]
-		};
+		try {
+			response = http.send({
+				method: 'GET',
+				path: path
+			});
+			response = JSON.parse(response);
+		}
+		catch (error) {
+			console.log(error);
+		}
 
-		if (response.status == 0 && response.items.length) {
+		if (response.status == 0) {
 
 			// get discount percent
-			var discountPercent = response.items[0].percent;
+			var discountPercent = response.data.percent;
 
 			// apply discount
-			context.data.receipt.applyDiscount(discountPercent);
+			// TODO: APPLY DISCOUNT
+			// context.data.receipt.applyDiscount(discountPercent);
 
 			// go to EvoPos
 			if (navigation) navigation.pushNext();
+		}
+		else {
+			showError();
 		}
 	})
 };
