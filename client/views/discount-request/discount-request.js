@@ -40,7 +40,7 @@ var showError = function () {
 	setTimeout(function () {
 		document.querySelector('.error').classList.remove('has-error')
 	}, 1000)
-}
+};
 
 
 var handleApplyDiscountButtonEvents = function () {
@@ -57,13 +57,16 @@ var handleApplyDiscountButtonEvents = function () {
 		if (!isCardNumberValid(cardNumber)) return false;
 
 		// Request discount by card number
-		var path = 'customer-discountcard?_method=discountcardPercent&cardnumber=' + cardNumber;
 		var response = {};
 
 		try {
 			response = http.send({
 				method: 'GET',
-				path: path
+				path: 'customer-discountcard',
+				params: {
+					_method: 'discountcardPercent',
+					cardnumber: cardNumber
+				}
 			});
 			response = JSON.parse(response);
 		}
