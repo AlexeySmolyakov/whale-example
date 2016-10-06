@@ -77,8 +77,9 @@ var handleApplyDiscountButtonEvents = function () {
 			var discountPercent = response.data.percent;
 
 			// apply discount
-			// TODO: APPLY DISCOUNT
-			// context.data.receipt.applyDiscount(discountPercent);
+			if (receipt && receipt.applyReceiptDiscountPercent) {
+				receipt.applyReceiptDiscountPercent(discountPercent);
+			}
 
 			// go to EvoPos
 			if (navigation) navigation.pushNext();
