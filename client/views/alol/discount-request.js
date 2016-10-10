@@ -1,6 +1,6 @@
 var isCardNumberValid = function (cardNumber) {
 	cardNumber = cardNumber.trim();
-	return (cardNumber.length == 16 && /\d+/g.test(cardNumber));
+	return (cardNumber.length == 16 && /^\d+$/g.test(cardNumber));
 };
 
 var getCardNumber = function () {
@@ -71,7 +71,7 @@ var handleApplyDiscountButtonEvents = function () {
 			response = JSON.parse(response);
 		}
 		catch (error) {
-			console.log(error);
+			console.warn(error);
 		}
 
 		if (response.status == 0) {
@@ -85,7 +85,12 @@ var handleApplyDiscountButtonEvents = function () {
 			}
 
 			// go to EvoPos
-			if (navigation) navigation.pushNext();
+			try {
+				navigation.pushNext();
+			}
+			catch (error) {
+				console.warn(error);
+			}
 		}
 		else {
 			showError();
@@ -93,10 +98,28 @@ var handleApplyDiscountButtonEvents = function () {
 	})
 };
 
+var handleSkipButtonEvents = function () {
+	// get button element
+	var $skipButton = document.querySelector('button[name=skip-button]');
+
+	// add event listener
+	$skipButton.addEventListener('click', function (event) {
+
+		// go to EvoPos
+		try {
+			navigation.pushNext();
+		}
+		catch (error) {
+			console.warn(error);
+		}
+	});
+};
+
 
 // Initialize or update logic
 var update = function () {
 	handleInputEvents();
+	handleSkipButtonEvents();
 	handleApplyDiscountButtonEvents();
 };
 

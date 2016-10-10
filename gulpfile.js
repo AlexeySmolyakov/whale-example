@@ -8,9 +8,9 @@ var paths = {
 };
 
 gulp.task('sass', function () {
-	return gulp.src('./client/views/discount-request/**/*.scss')
+	return gulp.src('./client/views/alol/**/*.scss')
 	.pipe(sass().on('error', sass.logError))
-	.pipe(gulp.dest('./client/views/discount-request'));
+	.pipe(gulp.dest('./client/views/alol'));
 });
 
 gulp.task('watch', function () {

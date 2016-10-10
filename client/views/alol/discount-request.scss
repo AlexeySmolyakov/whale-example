@@ -85,27 +85,41 @@ body {
 }
 
 .button {
-	margin: 200px 0;
+	margin-top: 120px;
 
 	button {
 		width: 100%;
 		border: none;
 		outline: none;
-		background-color: $primary-color;
-		color: white;
 		border-radius: 2px;
 		padding: 14px 20px;
 		text-align: center;
 		cursor: pointer;
 		font-size: 16px;
+		font-weight: 500;
 		-webkit-transition: all 0.1s ease-in-out;
 		-moz-transition: all 0.1s ease-in-out;
 		-ms-transition: all 0.1s ease-in-out;
 		-o-transition: all 0.1s ease-in-out;
 		transition: all 0.1s ease-in-out;
+		margin: 10px 0;
+	}
+
+	button[name=apply-discount-button] {
+		background-color: $primary-color;
+		color: white;
 
 		&:active {
 			background-color: lighten($primary-color, 2%);
+		}
+	}
+
+	button[name=skip-button] {
+		background-color: white;
+		color: #666;
+
+		&:active {
+			background-color: #f8f8f8;
 		}
 	}
 }

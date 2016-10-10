@@ -66,22 +66,30 @@ body {
     opacity: 1; }
 
 .button {
-  margin: 200px 0; }
+  margin-top: 120px; }
   .button button {
     width: 100%;
     border: none;
     outline: none;
-    background-color: #0b4866;
-    color: white;
     border-radius: 2px;
     padding: 14px 20px;
     text-align: center;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 500;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     -ms-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out; }
-    .button button:active {
+    transition: all 0.1s ease-in-out;
+    margin: 10px 0; }
+  .button button[name=apply-discount-button] {
+    background-color: #0b4866;
+    color: white; }
+    .button button[name=apply-discount-button]:active {
       background-color: #0c4e6f; }
+  .button button[name=skip-button] {
+    background-color: white;
+    color: #666; }
+    .button button[name=skip-button]:active {
+      background-color: #f8f8f8; }

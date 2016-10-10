@@ -3,11 +3,11 @@ version: 1
 packageName: ALOL
 
 capabilities:
-  - inventory
-  - storage
   - http
-  - event-bus
   - receipts
+#  - inventory
+#  - storage
+#  - event-bus
 
 #daemons:
 #  - name: suggestion
@@ -25,10 +25,33 @@ capabilities:
 #    point: before
 #    behavior: before-receipt-fixed.js
 
+plugins:
+  - name: alol
+    moment: evo.receipt.items.fixed
+    point: before
+    behavior: before-receipt-fixed.js
+
 views:
   - name: discount-request
-    source: discount-request.html
-    scripts: # script list to be included
+    header: "АЛОЛЬ"
+    source: client/views/alol/discount-request.html
+    scripts:
       - discount-request.js
-    styles: # style list to be included
-      - "*.css" # может подключить все файлы
+    styles:
+      - "*.css"
+
+#  - name: suggestion-list
+#    header: "Предложите клиенту"
+#    source: client/views/suggestion-list/view.html
+#    scripts: # список скриптов которые должны быть подключены
+#      - suggestion-list-view.js
+#    styles: # список стилей которые должны быть подключены
+#      - "*.css" # может подключить все файлы
+
+#  - name: launcher
+#    header: "Mint Whale"
+#    source: client/views/mint-whale-blank/mint-whale-blank.html
+#    scripts:
+#      - no-script
+#    styles:
+#      - "*.css"
