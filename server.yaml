@@ -6,6 +6,6 @@ capabilities:
 endpoints:
   http: # smart terminal requests
     default: # {any-method} http://api.mintwhale.ru/test/{any-path}
-        url: https://stage.alol.io/rest/3.0/
+        url: https://stage.alol.io/rest/2.0/
         auth:
           type: token
